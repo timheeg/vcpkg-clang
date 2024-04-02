@@ -3,6 +3,10 @@
   "name": "gcc-build-env",
   "build": {
     "dockerfile": "Dockerfile",
+    "args": {
+      "RHEL8_ORG": "${localEnv:RHEL8_ORG}",
+      "RHEL8_ACTIVATION_KEY": "${localEnv:RHEL8_ACTIVATION_KEY}"
+    },
     "runArgs": [
       "--pull=never"
     ]
