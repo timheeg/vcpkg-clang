@@ -25,6 +25,14 @@ RUN curl --fail -LO https://github.com/Kitware/CMake/releases/download/v3.28.3/c
   && tar -xvf cmake-3.28.3-linux-x86_64.tar.gz \
   && rm cmake-3.28.3-linux-x86_64.tar.gz
 
+# Install ninja
+WORKDIR /opt
+RUN curl --fail \
+  -LO "https://github.com/ninja-build/ninja/releases/download/v1.11.1/ninja-linux.zip" \
+  && mkdir -p /opt/ninja/1.11.1 \
+  && unzip ninja-linux.zip -d /opt/ninja/1.11.1 \
+  && rm ninja-linux.zip
+
 # Install root user .bashrc
 COPY .bashrc /root/
 
