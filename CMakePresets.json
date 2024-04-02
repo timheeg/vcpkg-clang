@@ -112,6 +112,28 @@
         "clang-static",
         "release"
       ]
+    },
+    {
+      "name": "custom-clang-static",
+      "hidden": true,
+      "description": "clang 16, static vcpkg build w/custom triplet/toolchain",
+      "cacheVariables": {
+        "VCPKG_TARGET_TRIPLET": "x64-linux-clang16"
+      },
+      "environment": {
+        "VCPKG_OVERLAY_TRIPLETS": "${sourceDir}/tools/vcpkg/triplets",
+        "VCPKG_CHAINLOAD_TOOLCHAIN_FILE": "${sourceDir}/tools/vcpkg/toolchain/clang-16.cmake"
+      }
+    },
+    {
+      "name": "x64-linux-custom-clang-static-release",
+      "displayName": "x64-linux-custom-clang-static-release",
+      "description": "clang 16, static, release build w/custom vcpkg triplet",
+      "inherits": [
+        "x64-linux",
+        "custom-clang-static",
+        "release"
+      ]
     }
   ],
   "buildPresets": [
@@ -130,6 +152,12 @@
       "name": "x64-linux-clang-static-release",
       "inherits": "common",
       "configurePreset": "x64-linux-clang-static-release",
+      "configuration": "Release"
+    },
+    {
+      "name": "x64-linux-custom-clang-static-release",
+      "inherits": "common",
+      "configurePreset": "x64-linux-custom-clang-static-release",
       "configuration": "Release"
     }
   ]
