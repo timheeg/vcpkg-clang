@@ -121,7 +121,6 @@
         "VCPKG_TARGET_TRIPLET": "x64-linux-clang16"
       },
       "environment": {
-        "VCPKG_OVERLAY_TRIPLETS": "${sourceDir}/tools/vcpkg/triplets",
         "VCPKG_CHAINLOAD_TOOLCHAIN_FILE": "${sourceDir}/tools/vcpkg/toolchain/clang-16.cmake"
       }
     },
