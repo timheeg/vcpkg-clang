@@ -14,6 +14,10 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias ls='ls --color'
 
+# Add CMake to path
+CMAKE_HOME=/opt/cmake-3.28.3-linux-x86_64
+export PATH=$CMAKE_HOME/bin:$PATH
+
 #
 # Define git prompt and git completion
 #

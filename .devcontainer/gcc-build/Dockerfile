@@ -19,6 +19,12 @@ RUN dnf update -y \
   && dnf clean all \
   && rm -rf /var/cache/yum
 
+# Install cmake
+WORKDIR /opt
+RUN curl --fail -LO https://github.com/Kitware/CMake/releases/download/v3.28.3/cmake-3.28.3-linux-x86_64.tar.gz \
+  && tar -xvf cmake-3.28.3-linux-x86_64.tar.gz \
+  && rm cmake-3.28.3-linux-x86_64.tar.gz
+
 # Install root user .bashrc
 COPY .bashrc /root/
 
