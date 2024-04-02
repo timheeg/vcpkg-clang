@@ -24,7 +24,10 @@
     {
       "name": "common",
       "hidden": true,
-      "inherits": "cmake-logging",
+      "inherits": [
+        "cmake-logging",
+        "vcpkg-debug"
+      ],
       "binaryDir": "${sourceDir}/build/${presetName}",
       "installDir": "${sourceDir}/build/${presetName}/install",
       "cacheVariables": {
