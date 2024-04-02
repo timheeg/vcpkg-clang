@@ -10,12 +10,15 @@ RUN subscription-manager register --org=$RHEL8_ORG --activationkey=$RHEL8_ACTIVA
 #
 # gcc-toolset-13 compiler
 # vim-enhanced for color vi support in git
+# zip/unzip for vcpkg
 #
 RUN dnf update -y \
   && dnf -y install \
   gcc-toolset-13 \
   git \
+  unzip \
   vim-enhanced \
+  zip \
   && dnf clean all \
   && rm -rf /var/cache/yum
 
@@ -32,6 +35,11 @@ RUN curl --fail \
   && mkdir -p /opt/ninja/1.11.1 \
   && unzip ninja-linux.zip -d /opt/ninja/1.11.1 \
   && rm ninja-linux.zip
+
+# Clone & bootstrap vcpkg
+WORKDIR /
+RUN git clone https://github.com/microsoft/vcpkg.git \
+  && ./vcpkg/bootstrap-vcpkg.sh -disableMetrics
 
 # Install root user .bashrc
 COPY .bashrc /root/

@@ -22,6 +22,10 @@ export PATH=$CMAKE_HOME/bin:$PATH
 NINJA_HOME=/opt/ninja/1.11.1
 export PATH=$NINJA_HOME:$PATH
 
+# Define VCPKG_ROOT and add to path
+export VCPKG_ROOT=/vcpkg
+export PATH=$VCPKG_ROOT:$PATH
+
 #
 # Define git prompt and git completion
 #
