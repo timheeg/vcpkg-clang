@@ -89,6 +89,26 @@
         "gcc-static",
         "debug"
       ]
+    },
+    {
+      "name": "clang-static",
+      "hidden": true,
+      "description": "clang 16, static vcpkg build",
+      "cacheVariables": {
+        "CMAKE_CXX_COMPILER": "/usr/bin/clang-16",
+        "CMAKE_C_COMPILER": "/usr/bin/clang-16",
+        "VCPKG_TARGET_TRIPLET": "x64-linux"
+      }
+    },
+    {
+      "name": "x64-linux-clang-static-release",
+      "displayName": "x64-linux-clang-static-release",
+      "description": "clang 16, static, release build",
+      "inherits": [
+        "x64-linux",
+        "clang-static",
+        "release"
+      ]
     }
   ],
   "buildPresets": [
@@ -101,6 +121,12 @@
       "name": "x64-linux-gcc-static-release",
       "inherits": "common",
       "configurePreset": "x64-linux-gcc-static-release",
+      "configuration": "Release"
+    },
+    {
+      "name": "x64-linux-clang-static-release",
+      "inherits": "common",
+      "configurePreset": "x64-linux-clang-static-release",
       "configuration": "Release"
     }
   ]
