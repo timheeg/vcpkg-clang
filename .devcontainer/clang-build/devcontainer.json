@@ -1,0 +1,25 @@
+{
+  "$schema": "https://raw.githubusercontent.com/devcontainers/spec/main/schemas/devContainer.base.schema.json",
+  "name": "clang-build-env",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "runArgs": [
+      "--pull=never"
+    ]
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "davidanson.vscode-markdownlint",
+        "ms-vscode.cmake-tools",
+        "ms-vscode.cpptools",
+        "streetsidesoftware.code-spell-checker",
+        "stkb.rewrap",
+        "timonwong.shellcheck",
+        "twxs.cmake",
+        "vscode.cpptools-extension-pack",
+        "xaver.clang-format"
+      ]
+    }
+  }
+}
