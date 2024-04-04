@@ -25,6 +25,10 @@ export PATH=$CMAKE_HOME/bin:$PATH
 NINJA_HOME=/opt/ninja/1.11.1
 export PATH=$NINJA_HOME:$PATH
 
+# Add patchelf to path
+PATCHELF_HOME=/opt/patchelf/0.14.5
+export PATH=$PATCHELF_HOME/bin:$PATH
+
 # Define VCPKG_ROOT and add to path
 export VCPKG_ROOT=/vcpkg
 export PATH=$VCPKG_ROOT:$PATH

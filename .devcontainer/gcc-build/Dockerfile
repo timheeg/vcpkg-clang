@@ -36,6 +36,14 @@ RUN curl --fail \
   && unzip ninja-linux.zip -d /opt/ninja/1.11.1 \
   && rm ninja-linux.zip
 
+# Install patchelf
+WORKDIR /opt
+RUN curl --fail \
+  -LO "https://github.com/NixOS/patchelf/releases/download/0.14.5/patchelf-0.14.5-x86_64.tar.gz" \
+  && mkdir -p /opt/patchelf/0.14.5 \
+  && tar -xvf patchelf-0.14.5-x86_64.tar.gz \
+  && rm patchelf-0.14.5-x86_64.tar.gz
+
 # Clone & bootstrap vcpkg
 WORKDIR /
 RUN git clone https://github.com/microsoft/vcpkg.git \
