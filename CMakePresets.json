@@ -91,6 +91,26 @@
       ]
     },
     {
+      "name": "gcc-dynamic",
+      "hidden": true,
+      "description": "gcc 13, dynamic vcpkg build",
+      "cacheVariables": {
+        "CMAKE_CXX_COMPILER": "/opt/rh/gcc-toolset-13/root/usr/bin/g++",
+        "CMAKE_C_COMPILER": "/opt/rh/gcc-toolset-13/root/usr/bin/gcc",
+        "VCPKG_TARGET_TRIPLET": "x64-linux-dynamic"
+      }
+    },
+    {
+      "name": "x64-linux-gcc-dynamic-release",
+      "displayName": "x64-linux-gcc-dynamic-release",
+      "description": "gcc, dynamic, release build",
+      "inherits": [
+        "x64-linux",
+        "gcc-dynamic",
+        "release"
+      ]
+    },
+    {
       "name": "clang-static",
       "hidden": true,
       "description": "clang 16, static vcpkg build",
@@ -142,6 +162,12 @@
       "name": "x64-linux-gcc-static-release",
       "inherits": "common",
       "configurePreset": "x64-linux-gcc-static-release",
+      "configuration": "Release"
+    },
+    {
+      "name": "x64-linux-gcc-dynamic-release",
+      "inherits": "common",
+      "configurePreset": "x64-linux-gcc-dynamic-release",
       "configuration": "Release"
     },
     {
