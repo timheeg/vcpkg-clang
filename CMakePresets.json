@@ -131,14 +131,25 @@
       ]
     },
     {
-      "name": "custom-clang-static",
+      "name": "custom-clang",
       "hidden": true,
-      "description": "clang 16, static vcpkg build w/custom triplet/toolchain",
+      "description": "clang 16, vcpkg build w/custom triplet/toolchain",
       "cacheVariables": {
+        "CMAKE_C_COMPILER": "/usr/bin/clang-16",
+        "CMAKE_CXX_COMPILER": "/usr/bin/clang++-16",
         "VCPKG_TARGET_TRIPLET": "x64-linux-clang16"
       },
       "environment": {
         "VCPKG_CHAINLOAD_TOOLCHAIN_FILE": "${sourceDir}/tools/vcpkg/toolchain/clang-16.cmake"
+      }
+    },
+    {
+      "name": "custom-clang-static",
+      "hidden": true,
+      "description": "clang 16, static vcpkg build w/custom triplet/toolchain",
+      "inherits": "custom-clang",
+      "cacheVariables": {
+        "VCPKG_TARGET_TRIPLET": "x64-linux-clang16"
       }
     },
     {
